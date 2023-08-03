@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+class CZooAnimal{
+    constructor(IdAnimal, Name, cageNumber, IdTypeAnimal, weight) {
+        this.IdAnimal = IdAnimal
+        this.Name = Name
+        this.cageNumber = cageNumber
+        this.IdTypeAnimal = IdTypeAnimal
+        this.weight = weight
+    }
+}
+
+let AnimalsArray = [];
+let IdAnimal = "", Name = "", cageNumber = 0, IdTypeAnimal = "", weight = 0;
+
+while(IdAnimal!=null && Name!=null && cageNumber!=null && IdTypeAnimal!=null && weight!=null){
+
+IdAnimal = prompt("Ingrese IdAnimal");
+Name = prompt("Ingrese Name");
+cageNumber = prompt("Ingrese cageNumber");
+IdTypeAnimal = prompt("Ingrese IdTypeAnimal");
+weight = prompt("Ingrese weight");
+AnimalsArray.push(new CZooAnimal(IdAnimal, Name, cageNumber, IdTypeAnimal, weight));
+}
+
+let cantidadmenora3kg = 0, cantidadfelinos = 0, jaula4menora120;
+
+for(let i=0;i<AnimalsArray.length;i++){
+    if(AnimalsArray[i].cageNumber == 5 && AnimalsArray[i].weight < 3){
+        cantidadmenora3kg += 1;
+    }
+    if(AnimalsArray[i].cageNumber >= 2 && AnimalsArray[i].cageNumber <= 5 && AnimalsArray[i].IdTypeAnimal == "felino"){
+        cantidadfelinos += 1;
+    }
+    if(AnimalsArray[i].cageNumber == 4 && AnimalsArray[i].weight < 120){
+        jaula4menora120 = AnimalsArray[i].Name;
+    }
+}
+
+console.log('Cantidad de animales de la Jaula 5 cuyo peso es menor a 3 kg: ', cantidadmenora3kg);
+console.log('Cantidad de animales de tipo felinos que están entre las jaulas 2 a 5: ', cantidadfelinos);
+console.log('Nombre del animal de la Jaula 4 cuyo peso es menor a 120: ', jaula4menora120);
+
+</script>
+
+</body>
+</html>
